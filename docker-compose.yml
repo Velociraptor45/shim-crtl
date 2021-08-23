@@ -1,0 +1,19 @@
+version: "3.7"
+
+services:
+
+  shim-ctrl:
+    container_name: shim-ctrl
+    image: velocir4ptor/shim-ctrl
+    environment:
+      ON_THRESHOLD: 65
+      OFF_THRESHOLD: 55
+      DELAY: 2
+      LOW_TEMP: 50
+      HIGH_TEMP: 60
+    volumes:
+      - /bin/systemctl:/bin/systemctl
+      - /run/systemd/system:/run/systemd/system
+      - /var/run/dbus/system_bus_socket:/var/run/dbus/system_bus_socket
+      - /sys/fs/cgroup:/sys/fs/cgroup
+    restart: always
