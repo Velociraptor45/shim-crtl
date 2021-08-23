@@ -4,7 +4,7 @@ services:
 
   shim-ctrl:
     container_name: shim-ctrl
-    image: velocir4ptor/shim-ctrl
+    image: velocir4ptor/shim-ctrl:1.0.0-arm32v7
     environment:
       ON_THRESHOLD: 65
       OFF_THRESHOLD: 55
