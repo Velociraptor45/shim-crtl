@@ -1,8 +1,9 @@
 FROM balenalib/rpi-raspbian
 
 RUN apt-get update
-RUN apt-get install -y git python3-pip gcc
+RUN apt-get install -y git python3-pip gcc python3-rpi.gpio lsb-release
 RUN pip3 install setuptools
+RUN apt-get clean all
 
 RUN git clone https://github.com/pimoroni/fanshim-python
 RUN fanshim-python/install.sh
